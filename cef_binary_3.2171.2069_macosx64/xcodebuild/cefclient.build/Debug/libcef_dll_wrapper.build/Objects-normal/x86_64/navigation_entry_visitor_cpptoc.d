@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/cpptoc/navigation_entry_visitor_cpptoc.cc \
+  /Users/devikasingh/Documents/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/cpptoc/navigation_entry_visitor_cpptoc.cc \
   libcef_dll/cpptoc/navigation_entry_visitor_cpptoc.h \
   include/cef_browser.h include/cef_base.h \
   include/base/cef_atomic_ref_count.h include/base/cef_atomicops.h \

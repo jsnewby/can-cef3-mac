@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/cpptoc/geolocation_handler_cpptoc.cc \
+  /Users/devikasingh/Documents/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/cpptoc/geolocation_handler_cpptoc.cc \
   libcef_dll/cpptoc/geolocation_handler_cpptoc.h \
   include/cef_geolocation_handler.h include/cef_base.h \
   include/base/cef_atomic_ref_count.h include/base/cef_atomicops.h \

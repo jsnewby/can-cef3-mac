@@ -767,6 +767,7 @@ NSButton* MakeButton(NSRect* rect, NSString* title, NSView* parent) {
     
     NSString *launchURL = @"";
     launchURL = [notification.userInfo objectForKey:@"launchURL"];
+    std::string urlStr = [launchURL UTF8String];
     
     //[newtabView addTabWithRepresentedObject:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%d", number] forKey:@"name"]];
     [newtabView addTabWithRepresentedObject:[NSDictionary dictionaryWithObject:@" " forKey:@"name"]];
@@ -783,7 +784,7 @@ NSButton* MakeButton(NSRect* rect, NSString* title, NSView* parent) {
     [contentTabView selectTabViewItemAtIndex:number];
     
     CefRefPtr<CefBrowser> cur_browser;
-    cur_browser = CefBrowserHost::CreateBrowserSync(window_info2, g_handler.get(),"http://www.washingtonpost.com", settings2, NULL);
+    cur_browser = CefBrowserHost::CreateBrowserSync(window_info2, g_handler.get(),urlStr, settings2, NULL);
     
     if (g_handler.get() && g_handler->GetBrowserId()) {
         int cur_id = cur_browser->GetIdentifier();

@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/base/cef_thread_collision_warner.cc \
+  /Users/devikasingh/Documents/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/base/cef_thread_collision_warner.cc \
   include/base/cef_thread_collision_warner.h \
   include/base/cef_atomicops.h include/base/cef_build.h \
   include/base/internal/cef_atomicops_mac.h \

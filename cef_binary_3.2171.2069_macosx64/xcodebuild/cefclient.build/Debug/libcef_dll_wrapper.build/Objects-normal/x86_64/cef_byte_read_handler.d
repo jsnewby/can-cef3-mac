@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/wrapper/cef_byte_read_handler.cc \
+  /Users/devikasingh/Documents/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/wrapper/cef_byte_read_handler.cc \
   include/wrapper/cef_byte_read_handler.h include/base/cef_lock.h \
   include/base/cef_macros.h include/base/cef_platform_thread.h \
   include/base/cef_basictypes.h include/base/cef_build.h \

@@ -654,8 +654,8 @@ bool ClientHandler::OnBeforeBrowse(CefRefPtr<CefBrowser> browser,
     
     bool isLocalFile = scheme.compare("file") == 0;
     
-    bool isHost = HostMatches(&url_parts.host, "can.com");
-    
+    //bool isHost = HostMatches(&url_parts.host, "can.com");
+    bool isHost = false;
     
     if (IsHerokuError(url))
         return false;

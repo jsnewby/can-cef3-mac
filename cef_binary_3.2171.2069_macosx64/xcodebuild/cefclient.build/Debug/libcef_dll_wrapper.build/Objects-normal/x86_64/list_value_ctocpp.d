@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/ctocpp/list_value_ctocpp.cc \
+  /Users/devikasingh/Documents/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/ctocpp/list_value_ctocpp.cc \
   libcef_dll/ctocpp/binary_value_ctocpp.h include/cef_values.h \
   include/cef_base.h include/base/cef_atomic_ref_count.h \
   include/base/cef_atomicops.h include/base/cef_build.h \

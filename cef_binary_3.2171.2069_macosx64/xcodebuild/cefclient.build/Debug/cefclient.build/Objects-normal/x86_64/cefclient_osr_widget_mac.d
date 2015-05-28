@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/cefclient/cefclient_osr_widget_mac.mm \
+  /Users/devikasingh/Documents/can-cef3-mac/cef_binary_3.2171.2069_macosx64/cefclient/cefclient_osr_widget_mac.mm \
   cefclient/cefclient_osr_widget_mac.h include/cef_client.h \
   include/cef_base.h include/base/cef_atomic_ref_count.h \
   include/base/cef_atomicops.h include/base/cef_build.h \
