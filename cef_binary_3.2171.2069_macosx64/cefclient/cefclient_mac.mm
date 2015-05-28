@@ -285,8 +285,8 @@ static int currentTabId = 0;
     
     //std::string us = url.ToString();
    // NSString *launch_url = [NSString stringWithUTF8String:us.c_str()];
-    NSDictionary *userInfo = @{@"launchURL":url};
-   [[NSNotificationCenter defaultCenter] postNotificationName:@"LaunchNewTabNotification" object:nil userInfo:userInfo];
+  //  NSDictionary *userInfo = @{@"launchURL":url};
+  // [[NSNotificationCenter defaultCenter] postNotificationName:@"LaunchNewTabNotification" object:nil userInfo:userInfo];
     
     
 }

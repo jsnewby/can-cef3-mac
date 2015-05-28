@@ -99,11 +99,11 @@ void ClientHandler::LaunchTab(CefString& url) {
     // devika needs to be modified to open in a new tab
     
     //option with notifications
-   /* CEF_REQUIRE_UI_THREAD();
+   CEF_REQUIRE_UI_THREAD();
     std::string us = url.ToString();
     NSString *launch_url = [NSString stringWithUTF8String:us.c_str()];
     NSDictionary *userInfo = @{@"launchURL":launch_url};
-    [[NSNotificationCenter defaultCenter] postNotificationName:@"LaunchNewTabNotification" object:nil userInfo:userInfo];*/
+    [[NSNotificationCenter defaultCenter] postNotificationName:@"LaunchNewTabNotification" object:nil userInfo:userInfo];
     
     
    /* std::string us = url.ToString();
@@ -140,11 +140,11 @@ void ClientHandler::LaunchTab(CefString& url) {
     }
     
     
-    NSWindow* window = [AppGetMainWindowHandle() window];
+   /* NSWindow* window = [AppGetMainWindowHandle() window];
     NSObject* delegate = [window delegate];
     
     SEL sel = nil;
     sel = @selector(takeURLStringValueFrom:);
-    [delegate performSelectorOnMainThread:sel withObject:nil waitUntilDone:NO];
+    [delegate performSelectorOnMainThread:sel withObject:nil waitUntilDone:NO];*/
     
 }
