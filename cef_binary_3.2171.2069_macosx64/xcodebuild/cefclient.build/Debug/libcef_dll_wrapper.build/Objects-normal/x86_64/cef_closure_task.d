@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/devikasingh/Documents/CAN_CEF3_TabsSingletonLaunchTab/cef_binary_3.2171.2069_macosx64/libcef_dll/wrapper/cef_closure_task.cc \
+  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/wrapper/cef_closure_task.cc \
   include/wrapper/cef_closure_task.h include/base/cef_callback_forward.h \
   include/base/cef_macros.h include/cef_task.h include/cef_base.h \
   include/base/cef_atomic_ref_count.h include/base/cef_atomicops.h \

@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/devikasingh/Documents/CAN_CEF3_TabsSingletonLaunchTab/cef_binary_3.2171.2069_macosx64/libcef_dll/base/cef_callback_helpers.cc \
+  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/base/cef_callback_helpers.cc \
   include/base/cef_callback_helpers.h include/base/cef_basictypes.h \
   include/base/cef_build.h include/base/cef_callback.h \
   include/base/internal/cef_callback_internal.h \

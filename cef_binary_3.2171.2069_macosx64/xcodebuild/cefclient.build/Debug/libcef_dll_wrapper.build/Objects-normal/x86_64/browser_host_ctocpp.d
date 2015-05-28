@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/devikasingh/Documents/CAN_CEF3_TabsSingletonLaunchTab/cef_binary_3.2171.2069_macosx64/libcef_dll/ctocpp/browser_host_ctocpp.cc \
+  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/ctocpp/browser_host_ctocpp.cc \
   libcef_dll/cpptoc/client_cpptoc.h include/cef_client.h \
   include/cef_base.h include/base/cef_atomic_ref_count.h \
   include/base/cef_atomicops.h include/base/cef_build.h \

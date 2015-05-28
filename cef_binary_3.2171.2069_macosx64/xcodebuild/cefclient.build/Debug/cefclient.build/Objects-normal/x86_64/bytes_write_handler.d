@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/devikasingh/Documents/CAN_CEF3_TabsSingletonLaunchTab/cef_binary_3.2171.2069_macosx64/cefclient/bytes_write_handler.cpp \
+  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/cefclient/bytes_write_handler.cpp \
   cefclient/bytes_write_handler.h include/base/cef_lock.h \
   include/base/cef_macros.h include/base/cef_platform_thread.h \
   include/base/cef_basictypes.h include/base/cef_build.h \

@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/devikasingh/Documents/CAN_CEF3_TabsSingletonLaunchTab/cef_binary_3.2171.2069_macosx64/libcef_dll/base/cef_thread_checker_impl.cc \
+  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/base/cef_thread_checker_impl.cc \
   include/base/internal/cef_thread_checker_impl.h \
   include/base/cef_lock.h include/base/cef_macros.h \
   include/base/cef_platform_thread.h include/base/cef_basictypes.h \

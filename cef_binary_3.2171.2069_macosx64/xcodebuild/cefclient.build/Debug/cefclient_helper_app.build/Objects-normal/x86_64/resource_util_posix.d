@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/devikasingh/Documents/CAN_CEF3_TabsSingletonLaunchTab/cef_binary_3.2171.2069_macosx64/cefclient/resource_util_posix.cpp \
+  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/cefclient/resource_util_posix.cpp \
   cefclient/resource_util.h include/cef_stream.h include/cef_base.h \
   include/base/cef_atomic_ref_count.h include/base/cef_atomicops.h \
   include/base/cef_build.h include/base/internal/cef_atomicops_mac.h \

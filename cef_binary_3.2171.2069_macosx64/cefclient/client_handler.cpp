@@ -661,12 +661,13 @@ bool ClientHandler::OnBeforeBrowse(CefRefPtr<CefBrowser> browser,
         return false;
     
     if (!isLocalFile) {
-        
-        if (!isHost) {
-        LaunchTab(url);
+        if (!isHost &&
+                
+            request->GetResourceType() == RT_MAIN_FRAME &&
+            request->GetTransitionType() == TT_LINK) {
+                LaunchTab(url);
         }
         message_router_->OnBeforeBrowse(browser, frame);
-        
         return false;
     }
     
