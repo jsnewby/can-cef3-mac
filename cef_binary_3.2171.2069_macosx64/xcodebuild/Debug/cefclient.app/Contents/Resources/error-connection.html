@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+
+    <meta charset="UTF-8"/>
+
+    <title>CAN</title>
+
+    <style>
+      body {
+        background:#212121;
+      }
+      #error {
+        background:#1F1F1F;
+        margin:200px auto 0;
+        overflow:hidden;
+        padding:25px 20px 20px;
+        width:500px;
+      }
+      h1 {
+        color:#FFF;
+        font:normal 25px Georgia,serif;
+        margin:0 0 25px;
+      }
+      p {
+        color:#A09691;
+        font:normal 15px Georgia,serif;
+        margin:0 0 20px;
+      }
+      .error-message {
+        background:#363636;
+        margin-bottom:20px;
+        padding:10px;
+      }
+      .error-message p {
+        margin-bottom:10px;
+      }
+      .error-message p:last-child {
+        margin-bottom:0;
+      }
+      button {
+        background-image:-webkit-linear-gradient(top, #3c3c3c, #2c2c2c);
+        border: 1px solid #000;
+        border-radius:2px;
+        color:white;
+        cursor:pointer;
+        display:block;
+        font:normal 14px Helvetica, Arial, Sans-serif;
+        padding:8px 20px;
+        text-align:center;
+        text-decoration:none;
+      }
+      button:active {
+        background-image:-webkit-linear-gradient(top, #2c2c2c, #3c3c3c);
+      }
+      a:link,
+      a:visited {
+        color:#FFF;
+        text-decoration:none;
+      }
+      a:hover,
+      a:focus,
+      a:active {
+        text-decoration:underline;
+      }
+    </style>
+
+  </head>
+
+  <body role="application" class="prevent-scrolling">
+
+    <div id="page">
+
+    
+      <div id="error">
+
+      
+        <div id="error-content">
+          <h1>A connection error has occurred.</h1>
+
+          <div class="error-message">
+            {{message}}
+          </div>
+          <p>Your connection to the CAN application service has been interrupted. If you otherwise have a working internet connection and restarting the application doesn't resolve the issue, please contact CAN support.</p>
+
+          <button class="button grey-gradient" type="button" onclick="window.location.replace('{{location}}');">Retry</button>
+        </div>
+
+      </div>
+      <!-- /#error -->
+
+    </div>
+    <!-- /#page -->
+
+  </body>
+</html>
