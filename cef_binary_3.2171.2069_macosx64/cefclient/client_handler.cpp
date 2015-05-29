@@ -654,8 +654,14 @@ bool ClientHandler::OnBeforeBrowse(CefRefPtr<CefBrowser> browser,
     
     bool isLocalFile = scheme.compare("file") == 0;
     
-    //bool isHost = HostMatches(&url_parts.host, "can.com");
-    bool isHost = false;
+    
+    bool isHost = true;
+    if (browser->GetIdentifier() == browser_id_) {
+        isHost = false;
+    }
+       
+    
+    
     
     if (IsHerokuError(url))
         return false;
@@ -666,9 +672,15 @@ bool ClientHandler::OnBeforeBrowse(CefRefPtr<CefBrowser> browser,
             request->GetResourceType() == RT_MAIN_FRAME &&
             request->GetTransitionType() == TT_LINK) {
                 LaunchTab(url);
+            
+            
         }
-        message_router_->OnBeforeBrowse(browser, frame);
-        return false;
+        
+        if (isHost) {
+            message_router_->OnBeforeBrowse(browser, frame);
+            return false;
+        }
+        
     }
     
     //message_router_->OnBeforeBrowse(browser, frame);
