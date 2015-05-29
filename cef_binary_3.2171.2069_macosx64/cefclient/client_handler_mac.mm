@@ -39,10 +39,15 @@ void ClientHandler::OnTitleChange(CefRefPtr<CefBrowser> browser,
   NSString* str = [NSString stringWithUTF8String:titleStr.c_str()];
  //[window setTitle:str];
     
-    //begin devika
+    
+    //begin CAN
+    
     NSDictionary *userInfo = @{@"tabTitle":str};
+    
     [[NSNotificationCenter defaultCenter] postNotificationName:@"BrowserTitleChangedNotification" object:nil userInfo:userInfo];
-   //end devika
+    
+    
+   //end CAN
 }
 
 void ClientHandler::SendNotification(NotificationType type) {
@@ -98,55 +103,11 @@ bool ClientHandler::ErrorPageText(std::string& out, ErrorPage errorPage) {
 
 
 void ClientHandler::LaunchTab(CefString& url) {
-    // devika needs to be modified to open in a new tab
-    
-    //option with notifications
+    // Added for CAN
    CEF_REQUIRE_UI_THREAD();
     std::string us = url.ToString();
     NSString *launch_url = [NSString stringWithUTF8String:us.c_str()];
     NSDictionary *userInfo = @{@"launchURL":launch_url};
     [[NSNotificationCenter defaultCenter] postNotificationName:@"LaunchNewTabNotification" object:nil userInfo:userInfo];
-    
-    
-   /* std::string us = url.ToString();
-    NSString *launch_url = [NSString stringWithUTF8String:us.c_str()];
-    NSDictionary *userInfo = @{@"launchURL":launch_url};
-    NSNotification *myNotification = [NSNotification notificationWithName:@"LaunchNewTabNotification" object:nil userInfo:userInfo];
-    [[NSNotificationQueue defaultQueue] enqueueNotification:myNotification postingStyle:NSPostWhenIdle  coalesceMask:NSNotificationCoalescingOnName forModes:nil];*/
-    
-    // old method that launches a new browser
-    /*std::string us = url.ToString();
-    CFURLRef url_ref = CFURLCreateWithBytes(NULL,reinterpret_cast<const UInt8*>(us.c_str()), url.length(), kCFStringEncodingUTF8, NULL);
-    LSOpenCFURLRef(url_ref, NULL);
-    CFRelease(url_ref);*/
-    
-    //notifying the window...
-    
-    
-    //std::string us = url.ToString();
-    //NSString *launch_url = [NSString stringWithUTF8String:us.c_str()];
-    
-    //CEF_REQUIRE_UI_THREAD();
-    
-   // g_handler->GetBrowser()->GetMainFrame()
-    if (GetBrowserId() == browser_->GetIdentifier() && browser_->GetMainFrame()) {
-        // Set the edit window text
-        NSTextField* textField = (NSTextField*)edit_handle_;
-        //std::string urlStr(url);
-        //NSString* str = [NSString stringWithUTF8String:urlStr.c_str()];
-        std::string us = url.ToString();
-        NSString *launch_url = [NSString stringWithUTF8String:us.c_str()];
-        
-        [textField setStringValue:launch_url];
-        //[textField commitEditing];
-    }
-    
-    
-   /* NSWindow* window = [AppGetMainWindowHandle() window];
-    NSObject* delegate = [window delegate];
-    
-    SEL sel = nil;
-    sel = @selector(takeURLStringValueFrom:);
-    [delegate performSelectorOnMainThread:sel withObject:nil waitUntilDone:NO];*/
-    
+ 
 }

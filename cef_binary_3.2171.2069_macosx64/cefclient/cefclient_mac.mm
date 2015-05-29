@@ -34,7 +34,7 @@ char szWorkingDir[512];   // The current working directory
 
 // Sizes for URL bar layout
 #define BUTTON_HEIGHT 22
-#define BUTTON_WIDTH 72
+#define BUTTON_WIDTH 60
 #define BUTTON_MARGIN 8
 #define URLBAR_HEIGHT  32
 
@@ -283,10 +283,7 @@ static int currentTabId = 0;
  // g_handler->GetBrowser()->GetMainFrame()->LoadURL(urlStr);
     
     
-    //std::string us = url.ToString();
-   // NSString *launch_url = [NSString stringWithUTF8String:us.c_str()];
-  //  NSDictionary *userInfo = @{@"launchURL":url};
-  // [[NSNotificationCenter defaultCenter] postNotificationName:@"LaunchNewTabNotification" object:nil userInfo:userInfo];
+    
     
     
 }
@@ -443,6 +440,7 @@ static int currentTabId = 0;
 NSButton* MakeButton(NSRect* rect, NSString* title, NSView* parent) {
   NSButton* button = [[[NSButton alloc] initWithFrame:*rect] autorelease];
   [button setTitle:title];
+   // [button setFont:[NSFont fontWithName:@"Arial" size:12]];
   [button setBezelStyle:NSSmallSquareBezelStyle];
   [button setAutoresizingMask:(NSViewMaxXMargin | NSViewMinYMargin)];
   [parent addSubview:button];
@@ -567,7 +565,7 @@ NSButton* MakeButton(NSRect* rect, NSString* title, NSView* parent) {
     
     
   // Create the URL text field.
-  button_rect.origin.x += BUTTON_MARGIN;
+ /* button_rect.origin.x += BUTTON_MARGIN;
   button_rect.size.width = [contentView bounds].size.width -
       button_rect.origin.x - BUTTON_MARGIN;
   NSTextField* editWnd = [[NSTextField alloc] initWithFrame:button_rect];
@@ -576,12 +574,12 @@ NSButton* MakeButton(NSRect* rect, NSString* title, NSView* parent) {
   [editWnd setTarget:delegate];
   [editWnd setAction:@selector(takeURLStringValueFrom:)];
   [[editWnd cell] setWraps:NO];
-  [[editWnd cell] setScrollable:YES];
+  [[editWnd cell] setScrollable:YES];*/
 
   // Create the handler.
   g_handler = new ClientHandler();
   g_handler->SetMainWindowHandle(contentView);
-  g_handler->SetEditWindowHandle(editWnd);
+ // g_handler->SetEditWindowHandle(editWnd);
   
 
   // Create the browser view.
@@ -612,7 +610,7 @@ NSButton* MakeButton(NSRect* rect, NSString* title, NSView* parent) {
    
     
     
-    //Devika Add Tab Button
+   /*
     NSRect testRect = {{0,window_rect.size.height- 20},{20,20}};
     NSButton* addbutton = MakeButton(&testRect, @"+", contentView);
     [addbutton setTarget:self];
@@ -622,7 +620,7 @@ NSButton* MakeButton(NSRect* rect, NSString* title, NSView* parent) {
     button = MakeButton(&testRect7, @"X", contentView);
     [button setTarget:self];
     [button setAction:@selector(removeTab:) ];
-    
+   */ 
     
 
     
@@ -652,7 +650,7 @@ NSButton* MakeButton(NSRect* rect, NSString* title, NSView* parent) {
    
     
     NSTabViewItem *item = [[[NSTabViewItem alloc] initWithIdentifier:@"tab1"] autorelease];
-    window_info.SetAsChild([item view], 0, 0, kWindowWidth, kWindowHeight - 50);
+    window_info.SetAsChild([item view], 0, 0, kWindowWidth, kWindowHeight - dTabOffset);
    
     
     [contentTabView insertTabViewItem:item atIndex:number];
@@ -742,7 +740,7 @@ NSButton* MakeButton(NSRect* rect, NSString* title, NSView* parent) {
    // Create the browser view.
     CefWindowInfo window_info2;
     CefBrowserSettings settings2;
-    window_info2.SetAsChild([item view], 0, 0, kWindowWidth, kWindowHeight - 50);
+    window_info2.SetAsChild([item view], 0, 0, kWindowWidth, kWindowHeight - dTabOffset);
     [contentTabView insertTabViewItem:item atIndex:number];
     [contentTabView selectTabViewItemAtIndex:number];
 
@@ -779,7 +777,7 @@ NSButton* MakeButton(NSRect* rect, NSString* title, NSView* parent) {
     // Create the browser view.
     CefWindowInfo window_info2;
     CefBrowserSettings settings2;
-    window_info2.SetAsChild([item view], 0, 0, kWindowWidth, kWindowHeight - 50);
+    window_info2.SetAsChild([item view], 0, 0, kWindowWidth, kWindowHeight - dTabOffset);
     [contentTabView insertTabViewItem:item atIndex:number];
     [contentTabView selectTabViewItemAtIndex:number];
     
