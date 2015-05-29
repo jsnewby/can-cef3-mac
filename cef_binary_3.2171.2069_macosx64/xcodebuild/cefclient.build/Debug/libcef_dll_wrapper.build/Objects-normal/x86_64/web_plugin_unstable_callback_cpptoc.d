@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/devikasingh/Documents/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/cpptoc/web_plugin_unstable_callback_cpptoc.cc \
+  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/cpptoc/web_plugin_unstable_callback_cpptoc.cc \
   libcef_dll/cpptoc/web_plugin_unstable_callback_cpptoc.h \
   include/cef_web_plugin.h include/cef_base.h \
   include/base/cef_atomic_ref_count.h include/base/cef_atomicops.h \

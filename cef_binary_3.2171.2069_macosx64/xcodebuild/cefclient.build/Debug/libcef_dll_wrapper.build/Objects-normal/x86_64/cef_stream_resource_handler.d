@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/devikasingh/Documents/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/wrapper/cef_stream_resource_handler.cc \
+  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/wrapper/cef_stream_resource_handler.cc \
   include/wrapper/cef_stream_resource_handler.h \
   include/base/cef_macros.h include/base/cef_scoped_ptr.h \
   include/base/cef_basictypes.h include/base/cef_build.h \

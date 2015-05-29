@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/devikasingh/Documents/can-cef3-mac/cef_binary_3.2171.2069_macosx64/cefclient/process_helper_mac.cpp \
+  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/cefclient/process_helper_mac.cpp \
   include/cef_app.h include/cef_base.h \
   include/base/cef_atomic_ref_count.h include/base/cef_atomicops.h \
   include/base/cef_build.h include/base/internal/cef_atomicops_mac.h \
@@ -25,4 +25,4 @@ dependencies: \
   include/cef_load_handler.h include/cef_v8.h include/cef_task.h \
   include/cef_resource_bundle_handler.h include/cef_scheme.h \
   include/cef_response.h include/cef_resource_handler.h \
-  /Users/devikasingh/Documents/can-cef3-mac/cef_binary_3.2171.2069_macosx64/cefclient/client_app.h
+  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/cefclient/client_app.h

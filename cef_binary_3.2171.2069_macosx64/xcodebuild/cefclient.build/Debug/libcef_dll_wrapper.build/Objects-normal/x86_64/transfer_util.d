@@ -1,6 +1,6 @@
 dependencies: \
-  /Users/devikasingh/Documents/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/transfer_util.cpp \
-  /Users/devikasingh/Documents/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/transfer_util.h \
+  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/transfer_util.cpp \
+  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/transfer_util.h \
   include/internal/cef_string_list.h include/internal/cef_export.h \
   include/base/cef_build.h include/internal/cef_string.h \
   include/internal/cef_string_types.h \

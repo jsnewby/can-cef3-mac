@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/devikasingh/Documents/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/cpptoc/request_context_handler_cpptoc.cc \
+  /Users/newby/Projects/CAN/can-cef3-mac/cef_binary_3.2171.2069_macosx64/libcef_dll/cpptoc/request_context_handler_cpptoc.cc \
   libcef_dll/cpptoc/request_context_handler_cpptoc.h \
   include/cef_request_context_handler.h include/cef_base.h \
   include/base/cef_atomic_ref_count.h include/base/cef_atomicops.h \
