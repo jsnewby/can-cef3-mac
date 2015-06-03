@@ -33,20 +33,20 @@ class MainBrowserProvider : public OSRBrowserProvider {
 char szWorkingDir[512];   // The current working directory
 
 // Sizes for URL bar layout
-#define BUTTON_HEIGHT 22
+#define BUTTON_HEIGHT 25
 #define BUTTON_WIDTH 45
 #define BUTTON_MARGIN 5
 #define URLBAR_HEIGHT  32
 
 // Content area size for newly created windows.
 const int kWindowWidth = 976; //800;
-const int kWindowHeight = 650; //600;
+const int kWindowHeight = 550; //600;
 
 
 //Devika: offset for tabs
 const int dTabOffset = 0;
-const int outdentTabStrip = 160;
-const int heightTabStrip = 30;
+const int yoffsetTabStrip = 28;
+const int heightTabStrip = 60;
 
 //Devika: to hold current tab identifier
 static int currentTabId = 0;
@@ -568,7 +568,6 @@ NSButton* MakeButton(NSRect* rect, NSString* title, NSView* parent) {
     [button setAction:@selector(stopLoadingChild:)];
     
     
-    
     // Create the URL text field.
     /* button_rect.origin.x += BUTTON_MARGIN;
      button_rect.size.width = [contentView bounds].size.width -
@@ -611,9 +610,7 @@ NSButton* MakeButton(NSRect* rect, NSString* title, NSView* parent) {
         // Initialize window info to the defaults for a child window.
         window_info.SetAsChild(contentView, 0, 0, kWindowWidth, kWindowHeight - dTabOffset);
     }
-    
-    
-    
+
     
     /*
      NSRect testRect = {{0,window_rect.size.height- 20},{20,20}};
@@ -626,53 +623,43 @@ NSButton* MakeButton(NSRect* rect, NSString* title, NSView* parent) {
      [button setTarget:self];
      [button setAction:@selector(removeTab:) ];
      */
-    
-    
+
     
     //Create default tab in tab strip
+    //NSRect testRect2 = {{outdentTabStrip,kWindowHeight},{kWindowWidth,heightTabStrip}};
     
-    NSRect testRect2 = {{outdentTabStrip,window_rect.size.height},{window_rect.size.width,heightTabStrip}};
+    button_rect.origin.x += BUTTON_MARGIN;
+    button_rect.size.width = [contentView bounds].size.width -
+    button_rect.origin.x - BUTTON_MARGIN;
+    button_rect.size.height = heightTabStrip;
     
+   newtabView = [[SFTabView alloc] initWithFrame:button_rect];
     
-    
-    //NSRect testRect2 = {{outdentTabStrip,kWindowHeight},{window_rect.size.width,heightTabStrip}};
-    
-    newtabView = [[SFTabView alloc] initWithFrame:testRect2];
+   [newtabView setAutoresizingMask:(NSViewWidthSizable | NSViewMinYMargin)];
+  
     newtabView.delegate = self;
     newtabView.tabOffset = -15;
     newtabView.startingOffset = 20;
     number = 0;
-    
-    //[newtabView addTabWithRepresentedObject:[NSDictionary dictionaryWithObject:[NSString stringWithFormat:@"%d", number] forKey:@"name"]];
-    
     [newtabView addTabWithRepresentedObject:[NSDictionary dictionaryWithObject:@" " forKey:@"name"]];
     [contentView addSubview:newtabView];
     
-    
-    
+
     //Create default body
-    
-    contentTabView = [[[NSTabView alloc] initWithFrame:NSMakeRect(0, 0, kWindowWidth, kWindowHeight - dTabOffset)] autorelease];
+    contentTabView = [[[NSTabView alloc] initWithFrame:NSMakeRect(0, 0, kWindowWidth, kWindowHeight - dTabOffset - yoffsetTabStrip)] autorelease];
     [contentTabView setTabViewType:NSNoTabsNoBorder];
-    [contentTabView setAutoresizingMask:NSViewWidthSizable];
-    
-    
+    [contentTabView setAutoresizingMask:NSViewWidthSizable|NSViewHeightSizable];
     
     contentTabView.delegate = self;
-    //[contentView addSubview:contentTabView];
-    
-    
+  
     NSTabViewItem *item = [[[NSTabViewItem alloc] initWithIdentifier:@"tab1"] autorelease];
-    window_info.SetAsChild([item view], 0, 0, kWindowWidth, kWindowHeight - dTabOffset);
-    
-    
+    window_info.SetAsChild([item view], 0, 0, kWindowWidth, kWindowHeight - dTabOffset - yoffsetTabStrip);
     [contentTabView insertTabViewItem:item atIndex:number];
     [contentTabView selectTabViewItemAtIndex:number];
     [contentView addSubview:contentTabView];
     
     CefRefPtr<CefBrowser> cur_browser;
     cur_browser = CefBrowserHost::CreateBrowserSync(window_info, g_handler.get(),g_handler->GetStartupURL(), settings, NULL);
-    
     
     if (g_handler.get() && g_handler->GetBrowserId()) {
         int cur_id = cur_browser->GetIdentifier();
@@ -689,13 +676,11 @@ NSButton* MakeButton(NSRect* rect, NSString* title, NSView* parent) {
      name:@"SFTabChangedNotification"
      object:nil];
     
-    
     [[NSNotificationCenter defaultCenter]
      addObserver:self
      selector:@selector(deleteTab:)
      name:@"SFTabDeleteNotification"
      object:nil];
-    
     
     [[NSNotificationCenter defaultCenter]
      addObserver:self
@@ -703,27 +688,22 @@ NSButton* MakeButton(NSRect* rect, NSString* title, NSView* parent) {
      name:@"BrowserTitleChangedNotification"
      object:nil];
     
-    
-    
     [[NSNotificationCenter defaultCenter]
      addObserver:self
      selector:@selector(loadTab:)
      name:@"LaunchNewTabNotification"
      object:nil];
     
-    
-    
     // Show the window.
     [mainWnd makeKeyAndOrderFront: nil];
     
     // Size the window.
     NSRect r = [mainWnd contentRectForFrameRect:[mainWnd frame]];
-    //begin devika can
     r.size.width = kWindowWidth;
-    //begin devika can
     r.size.height = kWindowHeight + URLBAR_HEIGHT;
-    //r.size = window_rect.size;
     [mainWnd setFrame:[mainWnd frameRectForContentRect:r] display:YES];
+    
+    
 }
 
 - (void)tryToTerminateApplication:(NSApplication*)app {

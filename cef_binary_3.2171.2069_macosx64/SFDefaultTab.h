@@ -20,6 +20,7 @@
 }
 
 - (void) setRepresentedObject: (id) representedObject;
+- (void) setMainRepresentedObject: (id) representedObject;
 - (void) setSelected: (BOOL) selected;
 - (void) setBrowserLabel: (NSString*) browserlabel; //devika
 

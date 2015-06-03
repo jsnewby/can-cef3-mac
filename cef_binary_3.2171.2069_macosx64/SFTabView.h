@@ -39,6 +39,7 @@
     NSString *defaultTabClassName;
     
     BOOL canDragTab;
+    BOOL isMainTab;
     
     int tabOffset;
     int startingOffset;
@@ -115,6 +116,7 @@
  
  */
 - (void) addTabWithRepresentedObject: (id) representedObject;
+
 
 
 /**
@@ -472,6 +474,8 @@
  
  */
 - (void) setRepresentedObject: (id) representedObject;
+
+- (void) setMainRepresentedObject: (id) representedObject;
 
 
 /**

@@ -52,6 +52,7 @@
     startingOffset = 0;
     tabMagneticForce = 5;
     defaultTabClassName = @"SFDefaultTab";
+    isMainTab = YES;
     
     [self setupObservers];
 }
@@ -301,9 +302,23 @@
     Class tabLayerClass = [[NSBundle mainBundle] classNamed: defaultTabClassName];
     id newtab = [tabLayerClass layer];
     
+    
+    if ([self numberOfTabs] > 0) {
+        isMainTab = NO;
+    }
+    
     // Passing the represented object to the tab layer.
-    if ([newtab respondsToSelector:@selector(setRepresentedObject:)]) {
+    if (isMainTab) {
+        if ([newtab respondsToSelector:@selector(setMainRepresentedObject:)]) {
+            [newtab setMainRepresentedObject:representedObject];
+        }
+        
+    } else {
+        
+        if
+        ([newtab respondsToSelector:@selector(setRepresentedObject:)]) {
         [newtab setRepresentedObject:representedObject];
+        }
     }
     
     // Removing animation for z-index changes.
@@ -314,6 +329,9 @@
     // Setting up new tab.
     [newtab setFrame: CGRectMake([self startingXOriginForTabAtIndex:index], 0, [newtab frame].size.width, [newtab frame].size.height)];
     [newtab setZPosition:  (float)index * -1 ];
+    
+    
+    
     
     if ([self numberOfTabs] > 0 && index <= [self numberOfTabs]-1) {
         // Getting the right tag sequence (left-to-right).
@@ -380,11 +398,15 @@
     
     int newIndex = indexOfInitialTab; //- 1;
     
+    
+    
+    
     if ([tab isEqualTo:[self lastTab]] && ![tab isEqualTo:[self firstTab]]) {
         [self selectTab: [self tabAtIndex:indexOfLandingTab - 1]];
     }
     else if([tab isEqualTo:[self firstTab]] && [tab isEqualTo:[self lastTab]]){
         currentSelectedTab = nil;
+        
     }
     
     // Getting the right tag sequence (left-to-right).

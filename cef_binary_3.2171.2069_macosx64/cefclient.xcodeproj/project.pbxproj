@@ -2432,6 +2432,7 @@
 		3FC791A8E8240C180FCC4994 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: LShift Ltd";
 				PRODUCT_NAME = All;
 				SDKROOT = macosx;
 			};
@@ -2654,8 +2655,10 @@
 		60239E02E627CDF551F506B6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Distribution: LShift Ltd";
 				PRODUCT_NAME = All;
 				SDKROOT = macosx;
+				"USER_HEADER_SEARCH_PATHS[arch=*]" = "";
 			};
 			name = Debug;
 		};
